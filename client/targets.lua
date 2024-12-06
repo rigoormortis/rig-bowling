@@ -1,7 +1,10 @@
 local config = require 'config'
 local npc
 
-local function spawnNPC(coords, model, options)
+local function spawnNPC()
+    local coords = config.ticketPed.coords
+    local model = config.ticketPed.model
+    local options = config.ticketPed.options
     if lib.requestModel(model) then
         npc = CreatePed(4, model, coords.x, coords.y, coords.z, coords.w, false,
             true)
@@ -33,7 +36,7 @@ local bowlingAlley = lib.points.new({
 })
 
 function bowlingAlley:onEnter()
-    spawnNPC(config.ticketPed.coords, config.ticketPed.model, config.ticketPed.options)
+    spawnNPC()
 end
 
 function bowlingAlley:onExit()
