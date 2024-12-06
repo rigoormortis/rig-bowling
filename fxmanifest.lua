@@ -2,20 +2,20 @@ fx_version 'cerulean'
 game 'gta5'
 
 author 'Rigoormortis'
-description 'Bowling Alley'
+description 'Bowling Alley for Duskfall RP'
 version '1.0.0'
 
+shared_scripts {
+    '@ox_lib/init.lua',
+    'config.lua'
+}
+
 client_scripts {
-    '@qbx_core/modules/playerdata.lua',
-    'client/*.lua'
+    'client/main.lua'
 }
 
 server_scripts {
-    'server/*.lua'
-}
-
-shared_scripts {
-    '@ox_lib/init.lua'
+    'server/main.lua'
 }
 
 lua54 'yes'
