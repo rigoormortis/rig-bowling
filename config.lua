@@ -1,19 +1,33 @@
 return {
-    -- Bowling Alley
     location = vec3(752.93, -774.53, 26.34),
-    peds = {
-        -- Ped to buy a ticket to bowl
-        ticketPed = {
-            coords = vec4(756.37, -774.79, 25.34, 90),
-            model = 'a_m_m_business_01'
-        },
-        -- Ped to cook food
-        cookPed = {
-            coords = vec4(756.37, -768.02, 25.34, 90),
-            model = 's_m_m_linecook'
-        },
+    ticketPed = {
+        coords = vec4(756.37, -774.79, 25.34, 90),
+        model = 'a_m_m_business_01',
+        options = {
+            {
+                label = 'Buy Group Ticket',
+                icon = 'fa-solid fa-users',
+                onSelect = function(data)
+                    lib.notify({
+                        title = 'Ticket Purchase',
+                        description = 'You purchased a group ticket.',
+                        type = 'success'
+                    })
+                end
+            },
+            {
+                label = 'Buy Solo Ticket',
+                icon = 'fa-solid fa-user',
+                onSelect = function(data)
+                    lib.notify({
+                        title = 'Ticket Purchase',
+                        description = 'You purchased a solo ticket.',
+                        type = 'success'
+                    })
+                end
+            }
+        }
     },
-    -- Lane locations
     laneLocations = {
         vec3(747.83, -781.82, 25.5),
         vec3(747.83, -779.78, 26.5),
